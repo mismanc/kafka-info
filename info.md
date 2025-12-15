@@ -64,3 +64,25 @@ kafka-console-consumer --bootstrap-server kafka1:19092 \
                        --topic test-topic --group console-consumer-41911\
                        --property "key.separator= - " --property "print.key=true"
 ```
+
+## List the topics in a cluster
+```
+docker exec --interactive --tty kafka1  \
+kafka-topics --bootstrap-server kafka1:19092 --list
+```
+
+## Describe topic
+
+Command to describe all the Kafka topics.
+```
+docker exec --interactive --tty kafka1  \
+kafka-topics --bootstrap-server kafka1:19092 --describe
+```
+
+Command to describe a specific Kafka topic.
+
+```
+docker exec --interactive --tty kafka1  \
+kafka-topics --bootstrap-server kafka1:19092 --describe \
+--topic test-topic
+```
